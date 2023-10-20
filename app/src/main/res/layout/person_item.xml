@@ -31,17 +31,47 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nilima \n+91757523156483 \"
-
+                android:text="Nilima"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/materialButton2"
                 app:layout_constraintStart_toEndOf="@+id/materialButton"
                 app:layout_constraintTop_toTopOf="parent">
 
             </TextView>
+            <TextView
+                android:id="@+id/phoneno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+91757580883"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+                app:layout_constraintStart_toEndOf="@+id/materialButton"
+                app:layout_constraintTop_toTopOf="parent">
 
+            </TextView>
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+                app:layout_constraintStart_toEndOf="@+id/materialButton"
+                app:layout_constraintTop_toTopOf="parent">
+            </TextView>
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="address"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+                app:layout_constraintStart_toEndOf="@+id/materialButton"
+                app:layout_constraintTop_toTopOf="parent">
+            </TextView>
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/materialButton2"
                 android:layout_width="80dp"
