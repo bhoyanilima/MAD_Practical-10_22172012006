@@ -1,9 +1,8 @@
 package com.example.mad_practical_10_22172012006
 
-import android.app.Person
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -14,12 +13,12 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var personlistview: ListView;
+    private lateinit var personlistview:ListView;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        personlistview = findViewById<ListView>(R.id.list)
+        personlistview = findViewById<ListView>(R.id.listview)
 
         val button:FloatingActionButton = findViewById(R.id.fbutton)
 
@@ -30,17 +29,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun setpersondatatolistview() {
-        CoroutineScope(Dispatchers.IO).launch {
+    fun setpersondatatolistview()
+    {
+        CoroutineScope(Dispatchers.IO).launch{
             try {
-                val data = HttpRequest().makeServiceCall(
-                    "https://api.json-generator.com/templates/qjeKFdjkXCdK/data",
-                    "rbn0rerl1k0d3mcwgw7dva2xuwk780z1hxvyvrb1"
-                )
+                val data = HttpRequest().makeServiceCall("https://api.json-generator.com/templates/qjeKFdjkXCdK/data","rbn0rerl1k0d3mcwgw7dva2xuwk780z1hxvyvrb1")
                 withContext(Dispatchers.Main) {
                     try {
-                        if (data != null)
-                            runOnUiThread { getPersonDetailsFromJson(data) }
+                        if(data != null)
+                            runOnUiThread{getPersonDetailsFromJson(data)}
                     } catch (e: Exception) {
                         e.printStackTrace()
                     }
@@ -50,7 +47,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun getPersonDetailsFromJson(sJson: String?) {
         val personList = ArrayList<Person>()
         try {
